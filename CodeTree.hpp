@@ -12,7 +12,7 @@
  * 3. getCode: Get code of symbol which return by vector<char>  
  * } 
 */
-
+#pragma once
 #include <vector>
 #include <memory>
 

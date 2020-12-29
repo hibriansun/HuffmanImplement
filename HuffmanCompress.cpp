@@ -56,5 +56,5 @@ int main(int argc, char** argv){
     // }
 
     // Build Huffman code tree
-
+    CodeTree code = freqs.buildCodeTree();
 }
