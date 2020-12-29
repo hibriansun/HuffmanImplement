@@ -5,7 +5,7 @@
 
 class FrequencyTable{
     // Frequency Table
-    private: std::vector<uint32_t> frequencies;
+    public: std::vector<uint32_t> frequencies;
 
     // Constructor
     public: explicit FrequencyTable(const std::vector<std::uint32_t> &freqs);
