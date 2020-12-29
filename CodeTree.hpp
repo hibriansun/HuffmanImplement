@@ -39,7 +39,7 @@ class InternalNode final : public Node{
     public: std::unique_ptr<Node> rightChild;
 
     // Constructor -- filling pointer on children of InternalNode data field
-    public: InternalNode(std::unique_ptr<Node> &&left, std::unique_ptr<Node> &&right);
+    public: explicit InternalNode(std::unique_ptr<Node> &&left, std::unique_ptr<Node> &&right);
 };
 
 class CodeTree final{
@@ -51,7 +51,7 @@ class CodeTree final{
     public: explicit CodeTree(InternalNode &&treeRoot, std::uint32_t symbolLimit);        // type of tree root is InternalNode
 
     // fill codes into 2D symbol-codes table by travels the whole tree <Mention: travels by recursion>
-    public: void buildCodeTable(Node* node, std::vector<char> &prefix);
+    public: CodeTree buildCodeTable(Node* node, std::vector<char> &prefix);
 
 
     // get codes of symbol

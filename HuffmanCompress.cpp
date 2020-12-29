@@ -13,7 +13,6 @@
 
 #include <iostream>
 #include <fstream>
-#include "HuffmanCompress.hpp"
 #include "FrequencyTable.hpp"
 
 int main(int argc, char** argv){
@@ -41,6 +40,9 @@ int main(int argc, char** argv){
     }
 
     // Build Huffman code tree
-
+    CodeTree code = freqs.buildCodeTree();
+    for(int i = 0; code.getCode('a').size(); i++){
+        std::cout << code.getCode('a').at(i) << " " ;
+    }
 
 }

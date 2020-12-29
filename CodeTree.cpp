@@ -38,7 +38,7 @@ CodeTree::CodeTree(InternalNode &&treeRoot, std::uint32_t symbolLimit):
 }
 
 // Main algorithm
-void CodeTree::buildCodeTable(Node* node, std::vector<char> &prefix){
+CodeTree CodeTree::buildCodeTable(Node* node, std::vector<char> &prefix){
     if(dynamic_cast<InternalNode*>(node) != nullptr){
         // Process InternalNode
         const InternalNode* internalNode = dynamic_cast<InternalNode*>(node);
