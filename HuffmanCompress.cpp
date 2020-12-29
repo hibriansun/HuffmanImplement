@@ -40,29 +40,18 @@ int main(int argc, char** argv){
         }
         freqs.increment(static_cast<uint32_t>(tmpChar));
     }
+
+    // Build Huffman code tree
     CodeTree code = freqs.buildCodeTree();
-    // 前提：将FrequencyTable中的frequencies vector改成public
-    for(int i = 0; i < freqs.frequencies.size(); i++){
-        std::cout << freqs.frequencies.at(i) << std::endl;
-        for(int j = 0; j< code.getCode(i).size(); j++){
-            printf("%d ", code.getCode(i).at(j));
-        }
-        putchar('\n');
-    }
 
-    // Build Huffman code tree
-    // try{
-    //     CodeTree code = freqs.buildCodeTree();
-    //     for(int i = 0; i<code.getCode(97).size(); i++){
-    //         printf("%d ", code.getCode(97).at(i));
+    // // 前提：将FrequencyTable中的frequencies vector改成public
+    // for(int i = 0; i < freqs.frequencies.size(); i++){
+    //     std::cout << freqs.frequencies.at(i) << std::endl;
+    //     for(int j = 0; j< code.getCode(i).size(); j++){
+    //         printf("%d ", code.getCode(i).at(j));
     //     }
-    // }catch(const char* msg){
-    //     std::cout << msg << std::endl;
+    //     putchar('\n');
     // }
-
-    // Build Huffman code tree
-    // CodeTree code = freqs.buildCodeTree();
-
 
     // 存表 & 编码压缩
     in.clear();		
