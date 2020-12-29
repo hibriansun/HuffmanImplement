@@ -51,7 +51,7 @@ class CodeTree final{
     public: explicit CodeTree(InternalNode &&treeRoot, std::uint32_t symbolLimit);        // type of tree root is InternalNode
 
     // fill codes into 2D symbol-codes table by travels the whole tree <Mention: travels by recursion>
-    public: CodeTree buildCodeTable(Node* node, std::vector<char> &prefix);
+    public: void buildCodeTable(Node* node, std::vector<char> &prefix);
 
 
     // get codes of symbol

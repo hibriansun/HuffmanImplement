@@ -19,7 +19,7 @@ CodeTree::CodeTree(InternalNode &&treeRoot, std::uint32_t symbolLimit):
     if(symbolLimit < 2){
         throw("Too few symbols");
     }
-    if(symbolLimit > SIZE_MAX){
+    if(symbolLimit > UINT32_MAX){
         throw("Too many symbols");
     }
 
@@ -38,7 +38,7 @@ CodeTree::CodeTree(InternalNode &&treeRoot, std::uint32_t symbolLimit):
 }
 
 // Main algorithm
-CodeTree CodeTree::buildCodeTable(Node* node, std::vector<char> &prefix){
+void CodeTree::buildCodeTable(Node* node, std::vector<char> &prefix){
     if(dynamic_cast<InternalNode*>(node) != nullptr){
         // Process InternalNode
         const InternalNode* internalNode = dynamic_cast<InternalNode*>(node);
@@ -59,7 +59,7 @@ CodeTree CodeTree::buildCodeTable(Node* node, std::vector<char> &prefix){
 
         codesTable.at(leaf->symbol) = prefix;       // copy between vectors
     }else{
-        throw("Illegal Node Type", __LINE__);
+        throw("Illegal Node Type");
     }
 }
 

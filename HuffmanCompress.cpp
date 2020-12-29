@@ -14,6 +14,7 @@
 #include <iostream>
 #include <fstream>
 #include "FrequencyTable.hpp"
+#include "CodeTree.hpp"
 
 int main(int argc, char** argv){
     // Handle illegal arguments
