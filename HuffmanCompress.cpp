@@ -37,12 +37,24 @@ int main(int argc, char** argv){
             freqs.increment(256);
             break;
         }
+        freqs.increment(static_cast<uint32_t>(tmpChar));
     }
+    
+    // 前提：将FrequencyTable中的frequencies vector改成public
+    // for(int i = 0; i < freqs.frequencies.size(); i++){
+    //     std::cout << freqs.frequencies.at(i) << std::endl;
+    // }
 
     // Build Huffman code tree
-    CodeTree code = freqs.buildCodeTree();
-    for(int i = 0; code.getCode('a').size(); i++){
-        std::cout << code.getCode('a').at(i) << " " ;
-    }
+    // try{
+    //     CodeTree code = freqs.buildCodeTree();
+    //     for(int i = 0; i<code.getCode(97).size(); i++){
+    //         printf("%d ", code.getCode(97).at(i));
+    //     }
+    // }catch(const char* msg){
+    //     std::cout << msg << std::endl;
+    // }
+
+    // Build Huffman code tree
 
 }
